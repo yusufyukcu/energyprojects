@@ -40,7 +40,7 @@ function Navbar() {
     <div className="fixed inset-x-0 top-0 z-50 px-6 pt-6 md:px-12 lg:px-16">
       <header
         className={`liquid-glass mx-auto max-w-7xl rounded-xl shadow-soft transition-colors duration-300 ${
-          lightSkin ? "bg-white/85 text-ink" : "bg-black/30 text-white"
+          lightSkin ? "bg-white/85! text-ink" : "bg-black/30! text-white"
         }`}
       >
         <nav aria-label="Primary" className="flex items-center justify-between px-4 py-2">

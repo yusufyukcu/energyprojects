@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { ArrowRight, Play } from "lucide-react";
 import AnimatedHeading from "./AnimatedHeading";
 import FadeIn from "./FadeIn";
 
@@ -21,7 +20,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink"
+      className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-ink"
     >
       <video
         ref={videoRef}
@@ -34,44 +33,45 @@ function Hero() {
         <source src={VIDEO_URL} type="video/mp4" />
       </video>
 
-      <div className="relative z-10 grid w-full max-w-7xl gap-10 px-6 py-24 sm:px-10 lg:mx-auto lg:grid-cols-2 lg:items-end lg:gap-6 lg:px-16 lg:pb-24 lg:pt-40">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:grid lg:grid-cols-2 lg:items-end lg:px-16 lg:pb-16">
         <div>
           <AnimatedHeading
             text={"Exploring The World's\nBiggest Energy Projects."}
-            className="text-hero max-w-2xl font-display font-bold text-white"
+            className="mb-4 text-4xl font-normal text-white md:text-5xl lg:text-6xl xl:text-7xl"
+            style={{ letterSpacing: "-0.04em" }}
           />
 
           <FadeIn delay={800} duration={1000}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300 sm:text-xl">
+            <p className="mb-5 max-w-xl text-base text-gray-300 md:text-lg">
               Documentaries covering renewable energy, infrastructure,
               engineering, and the technologies shaping our future.
             </p>
           </FadeIn>
 
           <FadeIn delay={1200} duration={1000}>
-            <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <div className="flex flex-wrap gap-4">
               <a
                 href="#videos"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+                className="rounded-lg bg-white px-8 py-3 font-medium text-black transition-colors hover:bg-gray-100"
               >
-                <Play size={16} className="fill-ink" />
                 Watch Latest Video
               </a>
               <a
                 href="#topics"
-                className="liquid-glass group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
+                className="liquid-glass rounded-lg border border-white/20 px-8 py-3 font-medium text-white transition-colors hover:bg-white hover:text-black"
               >
                 Explore Projects
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </div>
           </FadeIn>
         </div>
 
-        <FadeIn delay={1400} duration={1000} className="lg:justify-self-end">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-300">
-            Renewable Energy. Infrastructure. Engineering.
-          </p>
+        <FadeIn delay={1400} duration={1000} className="flex items-end justify-start lg:justify-end">
+          <div className="liquid-glass rounded-xl border border-white/20 px-6 py-3">
+            <p className="text-lg font-light text-white md:text-xl lg:text-2xl">
+              Renewable Energy. Infrastructure. Engineering.
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>
