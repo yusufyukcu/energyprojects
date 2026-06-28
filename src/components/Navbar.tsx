@@ -34,13 +34,11 @@ function Navbar() {
     };
   }, [open]);
 
-  const lightSkin = scrolled || open;
-
   return (
     <div className="fixed inset-x-0 top-0 z-50 px-6 pt-6 md:px-12 lg:px-16">
       <header
-        className={`liquid-glass mx-auto max-w-7xl rounded-xl shadow-soft transition-colors duration-300 ${
-          lightSkin ? "bg-white/85! text-ink" : "bg-black/30! text-white"
+        className={`liquid-glass mx-auto max-w-7xl rounded-xl text-white shadow-soft transition-colors duration-300 ${
+          scrolled ? "bg-black/50!" : "bg-black/30!"
         }`}
       >
         <nav aria-label="Primary" className="flex items-center justify-between px-4 py-2">
@@ -97,7 +95,7 @@ function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className={`overflow-hidden border-t md:hidden ${lightSkin ? "border-line" : "border-white/15"}`}
+              className="overflow-hidden border-t border-white/15 md:hidden"
             >
               <ul className="flex flex-col px-4 py-2">
                 {NAV_LINKS.map((link) => (

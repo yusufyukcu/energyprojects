@@ -10,7 +10,7 @@ function VideoCard({ video, index }: { video: Video; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="group overflow-hidden rounded-3xl border border-line bg-white shadow-card transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+      className="liquid-glass group overflow-hidden rounded-3xl border border-white/15 transition-all duration-500 hover:-translate-y-1.5 hover:border-white/30"
     >
       <div className="relative aspect-video overflow-hidden">
         <ThumbnailIllustration
@@ -29,17 +29,17 @@ function VideoCard({ video, index }: { video: Video; index: number }) {
       </div>
 
       <div className="p-7">
-        <h3 className="text-[1.05rem] font-semibold leading-snug tracking-tight text-ink">
+        <h3 className="text-[1.05rem] font-semibold leading-snug tracking-tight text-white">
           {video.title}
         </h3>
-        <p className="mt-3 text-[14.5px] leading-relaxed text-ink-muted">
+        <p className="mt-3 text-[14.5px] leading-relaxed text-gray-400">
           {video.description}
         </p>
         <button
           type="button"
-          className="mt-6 inline-flex items-center gap-2 text-[14.5px] font-semibold text-blue-600 transition-colors duration-200 hover:text-blue-700"
+          className="mt-6 inline-flex items-center gap-2 text-[14.5px] font-semibold text-blue-400 transition-colors duration-200 hover:text-blue-300"
         >
-          <Play size={14} className="fill-blue-600" />
+          <Play size={14} className="fill-blue-400" />
           Watch Now
         </button>
       </div>
@@ -49,7 +49,7 @@ function VideoCard({ video, index }: { video: Video; index: number }) {
 
 function FeaturedVideos() {
   return (
-    <section id="videos" className="scroll-mt-24 bg-surface px-6 py-28 lg:px-10 lg:py-36">
+    <section id="videos" className="scroll-mt-24 border-t border-white/10 bg-ink px-6 py-28 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <motion.p
@@ -57,7 +57,7 @@ function FeaturedVideos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-600"
+            className="text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-400"
           >
             Featured Videos
           </motion.p>
@@ -66,7 +66,7 @@ function FeaturedVideos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-section-title mt-3 font-display font-bold text-ink"
+            className="text-section-title mt-3 font-medium text-white"
           >
             Latest documentaries
           </motion.h2>
@@ -75,7 +75,7 @@ function FeaturedVideos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-4 text-lg text-ink-muted"
+            className="mt-4 text-lg text-gray-400"
           >
             Deeply researched stories from the front lines of the energy transition.
           </motion.p>

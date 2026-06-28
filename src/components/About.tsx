@@ -22,14 +22,14 @@ const PILLARS: Pillar[] = [
 
 function About() {
   return (
-    <section id="about" className="scroll-mt-24 bg-surface-alt px-6 py-28 lg:px-10 lg:py-36">
+    <section id="about" className="scroll-mt-24 border-t border-white/10 bg-ink px-6 py-28 lg:px-10 lg:py-36">
       <div className="mx-auto max-w-5xl">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-600"
+          className="text-center text-[13px] font-semibold uppercase tracking-[0.14em] text-blue-400"
         >
           About EnergyProjects
         </motion.p>
@@ -39,7 +39,7 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto mt-5 max-w-3xl text-center text-[1.75rem] font-display font-semibold leading-snug tracking-tight text-ink sm:text-[2.3rem]"
+          className="mx-auto mt-5 max-w-3xl text-center text-[1.75rem] font-medium leading-snug tracking-tight text-white sm:text-[2.3rem]"
         >
           We produce deeply researched documentaries covering renewable energy,
           infrastructure, engineering, and global megaprojects.
@@ -53,9 +53,9 @@ function About() {
           className="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8"
         >
           {PILLARS.map((pillar) => (
-            <div key={pillar.title} className="border-t border-line pt-6">
-              <h3 className="text-base font-semibold text-ink">{pillar.title}</h3>
-              <p className="mt-2.5 text-[14.5px] leading-relaxed text-ink-muted">
+            <div key={pillar.title} className="border-t border-white/15 pt-6">
+              <h3 className="text-base font-semibold text-white">{pillar.title}</h3>
+              <p className="mt-2.5 text-[14.5px] leading-relaxed text-gray-400">
                 {pillar.description}
               </p>
             </div>
