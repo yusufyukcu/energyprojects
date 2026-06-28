@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
-const PILLARS = [
+interface Pillar {
+  title: string;
+  description: string;
+}
+
+const PILLARS: Pillar[] = [
   {
     title: "Independent research",
     description: "Every story starts with primary sources, site data, and direct access to the engineers building it.",

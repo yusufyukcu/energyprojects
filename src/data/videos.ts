@@ -1,4 +1,12 @@
-export const videos = [
+export interface Video {
+  id: string;
+  title: string;
+  description: string;
+  variant: "offshore" | "grid" | "storage";
+  duration: string;
+}
+
+export const videos: Video[] = [
   {
     id: "offshore-giants",
     title: "Offshore Giants: Engineering the World's Largest Wind Farms",

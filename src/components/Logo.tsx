@@ -1,4 +1,8 @@
-function Logo({ className = "h-8 w-8" }) {
+interface LogoProps {
+  className?: string;
+}
+
+function Logo({ className = "h-8 w-8" }: LogoProps) {
   return (
     <svg
       viewBox="0 0 32 32"

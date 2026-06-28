@@ -1,4 +1,6 @@
-function OffshoreScene({ uid }) {
+type Variant = "offshore" | "grid" | "storage";
+
+function OffshoreScene({ uid }: { uid: string }) {
   return (
     <>
       <defs>
@@ -51,7 +53,7 @@ function OffshoreScene({ uid }) {
   );
 }
 
-function GridScene({ uid }) {
+function GridScene({ uid }: { uid: string }) {
   return (
     <>
       <defs>
@@ -89,7 +91,7 @@ function GridScene({ uid }) {
   );
 }
 
-function StorageScene({ uid }) {
+function StorageScene({ uid }: { uid: string }) {
   const bars = [
     { x: 70, h: 70, accent: false },
     { x: 142, h: 108, accent: true },
@@ -148,7 +150,12 @@ function StorageScene({ uid }) {
   );
 }
 
-function ThumbnailIllustration({ variant, className = "" }) {
+interface ThumbnailIllustrationProps {
+  variant: Variant;
+  className?: string;
+}
+
+function ThumbnailIllustration({ variant, className = "" }: ThumbnailIllustrationProps) {
   const uid = variant;
   return (
     <svg viewBox="0 0 480 270" className={className} xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">

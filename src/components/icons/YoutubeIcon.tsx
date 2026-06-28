@@ -1,4 +1,10 @@
-function YoutubeIcon({ size = 20, strokeWidth = 1.8, className = "" }) {
+interface YoutubeIconProps {
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
+}
+
+function YoutubeIcon({ size = 20, strokeWidth = 1.8, className = "" }: YoutubeIconProps) {
   return (
     <svg
       width={size}

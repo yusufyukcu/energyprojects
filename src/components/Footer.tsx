@@ -2,7 +2,12 @@ import Logo from "./Logo";
 import YoutubeIcon from "./icons/YoutubeIcon";
 import { site } from "../data/site";
 
-const FOOTER_LINKS = [
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+const FOOTER_LINKS: FooterLink[] = [
   { label: "Home", href: "#home" },
   { label: "Videos", href: "#videos" },
   { label: "About", href: "#about" },

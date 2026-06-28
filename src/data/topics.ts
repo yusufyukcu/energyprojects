@@ -1,6 +1,12 @@
-import { BatteryCharging, Building2, Cog, Cpu, Factory, Network, Wind } from "lucide-react";
+import { BatteryCharging, Building2, Cog, Cpu, Factory, Network, Wind, type LucideIcon } from "lucide-react";
 
-export const topics = [
+export interface Topic {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
+export const topics: Topic[] = [
   {
     title: "Renewable Energy",
     description: "Wind, solar, and the systems generating clean power.",

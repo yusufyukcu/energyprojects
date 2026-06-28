@@ -1,9 +1,19 @@
+import type { ComponentType } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 import YoutubeIcon from "./icons/YoutubeIcon";
 import { site } from "../data/site";
 
-const CHANNELS = [
+type IconComponent = ComponentType<{ size?: number; strokeWidth?: number; className?: string }>;
+
+interface Channel {
+  label: string;
+  value: string;
+  href: string;
+  icon: IconComponent;
+}
+
+const CHANNELS: Channel[] = [
   {
     label: "Email",
     value: site.email,

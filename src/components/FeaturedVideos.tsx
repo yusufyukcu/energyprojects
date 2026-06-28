@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import ThumbnailIllustration from "../illustrations/ThumbnailIllustration";
-import { videos } from "../data/videos";
+import { videos, type Video } from "../data/videos";
 
-function VideoCard({ video, index }) {
+function VideoCard({ video, index }: { video: Video; index: number }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
