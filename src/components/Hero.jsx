@@ -1,14 +1,37 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import HeroIllustration from "../illustrations/HeroIllustration";
 
 function Hero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.pause();
+      video.loop = false;
+    }
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-gradient-to-b from-white via-[#eef3fb] to-[#dbe7f6]"
+      className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-surface-alt"
     >
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 pt-24 text-center sm:pt-28">
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-white/55" />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-32 text-center sm:py-40">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +68,7 @@ function Hero() {
         >
           <a
             href="#videos"
-            className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-[15px] font-semibold text-white shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
+            className="group inline-flex items-center gap-2 rounded-full bg-green-600 px-7 py-3.5 text-[15px] font-semibold text-white shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-500"
           >
             <Play size={16} className="fill-white" />
             Watch Latest Video
@@ -58,10 +81,6 @@ function Hero() {
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
           </a>
         </motion.div>
-      </div>
-
-      <div className="relative mt-6 min-h-[340px] flex-1 sm:min-h-[420px]">
-        <HeroIllustration className="absolute inset-0 h-full w-full" />
       </div>
     </section>
   );
